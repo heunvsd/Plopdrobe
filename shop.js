@@ -1,5 +1,5 @@
 // Temporary catalog data. Replace name and price here when finalized.
-const PRODUCTS = [{ id: 'plop-01', name: 'PLOP 01 — COAT STAND', price: 320000, image: 'assets/group-26.png', category: 'coat-stands', collection: 'plop', alt: 'Coat stand with crossed wooden poles, a circular metal rail, and a round base' }];
+const PRODUCTS = [{ id: 'plop-01', name: 'PLOP 01 — COAT STAND', price: 0, image: 'assets/group-26.png', category: 'coat-stands', collection: 'plop', alt: 'Coat stand with crossed wooden poles, a circular metal rail, and a round base' }];
 const shopView = document.querySelector('#shop-view');
 const shopOpenButton = document.querySelector('[data-shop-open]');
 const productGrid = document.querySelector('#product-grid');
