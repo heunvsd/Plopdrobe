@@ -1,0 +1,10 @@
+{
+  "name": "plopdrobe",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.cjs",
+    "start": "node server.cjs",
+    "check": "node --check simulation.mjs && node --check simulation-rules.mjs && node --check shop.js && node --check sound.js && node --check app.js && node --check copy.js && node --check server.cjs"
+  }
+}

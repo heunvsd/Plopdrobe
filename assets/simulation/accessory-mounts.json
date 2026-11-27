@@ -1,0 +1,67 @@
+{
+  "units": "metres",
+  "coordinate_system": "glTF Y-up",
+  "animation_duration_seconds": 0.8666666666666667,
+  "assets": {
+    "coat": {
+      "file": "plopdrobe-coat.glb",
+      "root": "Coat",
+      "clip": "Plop_Coat",
+      "mount_node": "Coat_Mount",
+      "position": [
+        -0.20764,
+        1.169,
+        0.119623
+      ],
+      "quaternion": [
+        0.0,
+        0.13438671827316284,
+        0.0,
+        0.9909290075302124
+      ],
+      "motion": "lift-and-settle",
+      "contact_origin": "Local origin: fabric resting on left wooden tip"
+    },
+    "hat": {
+      "file": "plopdrobe-hat.glb",
+      "root": "Hat",
+      "clip": "Plop_Hat",
+      "mount_node": "Hat_Mount",
+      "position": [
+        0.234502,
+        1.199,
+        -0.033672
+      ],
+      "quaternion": [
+        0.005781382322311401,
+        0.12957371771335602,
+        -0.14156056940555573,
+        0.981395959854126
+      ],
+      "motion": "lift-and-settle",
+      "contact_origin": "Local origin: inside crown supported by right wooden tip"
+    },
+    "bag": {
+      "file": "plopdrobe-bag.glb",
+      "root": "Bag",
+      "clip": "Plop_Bag",
+      "mount_node": "Bag_Mount",
+      "position": [
+        0.14826539026712243,
+        0.671,
+        -0.030310744873370245
+      ],
+      "quaternion": [
+        0.0,
+        -0.1397465616464615,
+        0.0,
+        0.9901873469352722
+      ],
+      "motion": "lift-and-settle",
+      "contact_origin": "Local origin: inner top of handle resting on ring"
+    }
+  },
+  "stand_file": "plopdrobe-stand.glb",
+  "composed_scene_file": "plopdrobe-styled-scene.glb",
+  "note": "Drape is modeled into the clothing; animation is rigid placement, not live cloth simulation"
+}

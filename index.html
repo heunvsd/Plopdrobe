@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0018a3">
+  <meta name="description" content="Plopdrobe. A place for things to land. Objects, gestures, and the rhythm of everyday life.">
+  <title>Plopdrobe — A Place for Things to Land</title>
+  <link rel="stylesheet" href="https://use.typekit.net/hnv2wws.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+  <script defer src="copy.js"></script>
+  <script defer src="sound.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="shop.js"></script>
+</head>
+<body>
+  <main id="stage" tabindex="0" aria-label="Click to draw mirrored circles and brand words. Press Enter or Space to draw, Escape to clear.">
+    <svg id="drawing" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+    <p id="invitation" class="ui-text">CLICK ANYWHERE, FIND YOUR RHYTHM</p>
+  </main>
+  <header class="site-header">
+    <nav class="nav-left" aria-label="Main navigation">
+      <button type="button" data-home>Home</button>
+      <button type="button" data-shop-open aria-expanded="false" aria-controls="shop-view">Shop</button>
+      <button type="button" data-panel="collections">Collections</button>
+    </nav>
+    <h1 class="logo"><button type="button" data-home aria-label="Plopdrobe home"><img src="assets/plopdrobe-logo.png" alt="Plopdrobe" draggable="false"></button></h1>
+    <nav class="nav-right" aria-label="Information and cart">
+      <button type="button" data-page="instructions">Instructions</button>
+      <button type="button" data-page="about">About</button>
+      <button type="button" data-page="cart" class="cart-nav">Cart <span id="cart-count" aria-hidden="true">0</span></button>
+    </nav>
+  </header>
+  <main id="shop-view" class="ui-text" hidden aria-label="Shop">
+    <nav class="shop-bar" aria-label="Shop collections">
+      <button type="button" data-shop-all aria-pressed="false">ALL ITEMS</button>
+      <button type="button" data-simulation-open aria-pressed="false">SIMULATION</button>
+    </nav>
+    <section class="shop-content" aria-labelledby="shop-heading">
+      <nav class="shop-filters" aria-label="Product categories">
+        <button type="button" data-category="all" aria-pressed="true">ALL ITEMS</button>
+        <button type="button" data-category="coat-stands" aria-pressed="false">COAT STANDS</button>
+        <button type="button" data-category="shelving" aria-pressed="false">SHELVING</button>
+        <button type="button" data-category="seating" aria-pressed="false">SEATING</button>
+        <button type="button" data-category="tables" aria-pressed="false">TABLES</button>
+        <button type="button" data-category="lighting" aria-pressed="false">LIGHTING</button>
+        <button type="button" data-category="objects" aria-pressed="false">OBJECTS</button>
+      </nav>
+      <h2 id="shop-heading">ALL PRESETS</h2>
+      <div class="product-grid" id="product-grid"></div>
+      <p id="shop-empty" hidden>NO ITEMS IN THIS CATEGORY YET.</p>
+      <span id="shop-status" class="sr-only" role="status"></span>
+    </section>
+  </main>
+  <main id="simulation-view" class="ui-text" hidden aria-label="Plopdrobe assembly simulation" data-ready="false">
+    <div id="simulation-canvas"></div>
+    <svg id="simulation-ink" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+    <div class="simulation-footer">
+      <p id="simulation-message" role="status" aria-live="polite">LOADING OBJECTS…</p>
+      <button type="button" id="simulation-reset">RESET</button>
+    </div>
+    <div id="simulation-objects" class="simulation-keyboard" aria-label="Keyboard assembly controls"></div>
+    <output id="simulation-state" class="sr-only" aria-live="polite"></output>
+  </main>
+  <main id="product-detail" class="ui-text" hidden aria-labelledby="product-title">
+    <section class="detail-hero" aria-label="Product image">
+      <img id="product-detail-image" src="assets/group-26.png" alt="Plop coat stand">
+      <div class="gallery-controls"><button class="gallery-thumb" aria-label="Image 1" aria-pressed="true"><img src="assets/group-26.png" alt=""></button><span>1 / 1</span><button disabled aria-label="Previous image">‹</button><button disabled aria-label="Next image">›</button></div>
+    </section>
+    <section class="detail-information">
+      <div class="detail-main-copy">
+        <h1 id="product-title">PLOP 01 — COAT STAND</h1>
+        <p id="product-detail-price" class="detail-price">₩320,000</p>
+        <p class="detail-color">COLOR: <strong>NATURAL / SILVER</strong></p>
+        <button class="finish-swatch" aria-label="Natural and silver finish" aria-pressed="true"><img src="assets/group-26.png" alt=""></button>
+        <label class="size-label" for="product-size">SIZE: <strong>ONE SIZE</strong></label>
+        <select id="product-size"><option>ONE SIZE</option></select>
+        <details class="detail-accordion size-guide"><summary>SIZE GUIDE</summary><p>FINAL DIMENSIONS TO BE CONFIRMED.</p></details>
+        <details class="detail-accordion included" open><summary>INCLUDED PIECES</summary><p>PLOP 01 — COAT STAND<br><span class="muted">PLOP COLLECTION</span></p></details>
+        <div class="description-accordions">
+          <details class="detail-accordion"><summary>PRODUCT DESCRIPTION</summary><p><strong>PLOP 01</strong> MAKES ROOM FOR THE THINGS YOU LEAVE WITHIN REACH. A COAT DRAPED HERE, A BAG HUNG THERE, A SCARF WAITING TO BE WORN AGAIN. TOGETHER THEY BECOME A SCENE OF EVERYDAY LIFE.</p></details>
+          <details class="detail-accordion"><summary>PRODUCT DETAILS</summary><p>FREESTANDING COAT STAND.<br>FINAL MATERIALS, DIMENSIONS, AND FINISHES TO BE CONFIRMED.</p></details>
+          <details class="detail-accordion"><summary>PRODUCT CONFIGURATION</summary><p>ONE COAT STAND. FINAL ASSEMBLY DETAILS TO BE CONFIRMED.</p></details>
+          <details class="detail-accordion"><summary>DESIGN PHILOSOPHY</summary><p>A PLACE FOR THINGS TO LAND. EACH OBJECT ADDS A NEW LINE, A NEW FOLD, A DIFFERENT SHAPE.</p></details>
+          <details class="detail-accordion"><summary>CARE GUIDE</summary><p>CARE INSTRUCTIONS WILL BE ADDED WHEN THE MATERIALS AND FINISHES ARE FINALIZED.</p></details>
+        </div>
+      </div>
+      <aside class="detail-purchase">
+        <button type="button" class="add-to-cart" data-add-cart><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 8h14v12H5z M8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> ADD TO CART</button>
+        <p class="cart-feedback" role="status"></p>
+        <details class="detail-accordion"><summary>MADE TO ORDER</summary><p>AVAILABILITY AND PRODUCTION LEAD TIME TO BE CONFIRMED.</p></details>
+        <details class="detail-accordion"><summary>SHIPPING</summary><p>DELIVERY OPTIONS AND SHIPPING COSTS TO BE CONFIRMED.</p></details>
+        <details class="detail-accordion"><summary>RETURNS & EXCHANGES</summary><p>RETURN AND EXCHANGE DETAILS WILL BE AVAILABLE BEFORE ORDERS OPEN.</p></details>
+      </aside>
+    </section>
+    <section class="related-products" aria-labelledby="related-title">
+      <div class="related-heading"><h2 id="related-title">SHOP THE LOOK</h2><p>EXPLORE THE OBJECTS OF EVERYDAY LIFE</p></div>
+      <div class="related-grid" aria-label="Future products"><div class="related-placeholder" aria-label="Product placeholder"></div><div class="related-placeholder" aria-label="Product placeholder"></div></div>
+    </section>
+    <div class="sticky-purchase"><img src="assets/group-26.png" alt=""><div>PLOP 01 — COAT STAND<br><strong>₩320,000</strong></div><button type="button" data-add-cart aria-label="Add to cart"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 8h14v12H5z M8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div>
+  </main>
+  <main id="instructions-view" class="site-page ui-text" data-site-page="instructions" hidden aria-labelledby="instructions-title">
+    <section class="information-intro instructions-intro">
+      <h1 id="instructions-title">Instructions</h1>
+      <div class="information-copy">
+          <p>Plopdrobe is made for the things you put down throughout the day. Two angled wooden poles, open metal curves and a circular base create places to drape, hang and place your belongings. Each part offers a simple point of contact, allowing familiar movements to guide how you use the object. Use the wooden poles for clothes and hats, and the open metal curves for bag handles or scarves. Add or remove items as you move through the day, letting their arrangement change with your routine. The object takes on a different shape with each thing you leave on it.</p>
+        </div>
+    </section>
+    <ol class="instruction-steps">
+      <li>
+        <h2>01 / Drape</h2>
+        <figure>
+          <!-- Replace this placeholder with the Drape image when ready. -->
+          <div class="image-placeholder" role="img" aria-label="Drape image placeholder">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L4 5M4 0L0 5"/></svg>
+          </div>
+          <figcaption>Drape your coat over a wooden pole without a hanger. Let the fabric fall around the point of contact, following its own weight and folds. The shape will vary with the material, length and way you place it.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <h2>02 / Hang</h2>
+        <figure>
+          <!-- Replace this placeholder with the Hang image when ready. -->
+          <div class="image-placeholder" role="img" aria-label="Hang image placeholder">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L4 5M4 0L0 5"/></svg>
+          </div>
+          <figcaption>Guide your bag handle through the opening in the metal ring and rest it on the curve. The open end allows you to hang and retrieve your bag directly, keeping it close at hand between outings.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <h2>03 / Place</h2>
+        <figure>
+          <!-- Replace this placeholder with the Place image when ready. -->
+          <div class="image-placeholder" role="img" aria-label="Place image placeholder">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L4 5M4 0L0 5"/></svg>
+          </div>
+          <figcaption>Place your hat on the other wooden pole, allowing its crown to rest over the tip. Together with the clothes and belongings around it, its outline becomes another part of the scene.</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <section class="instruction-simulation">
+      <h2><a href="#simulation">Try it in Simulation.</a></h2>
+      <p>Drag the wooden poles onto the base, then add your coat, hat and bag to explore how the pieces come together.</p>
+      <button id="sound-toggle" type="button" aria-pressed="true">SOUND ON</button>
+    </section>
+  </main>
+  <main id="about-view" class="site-page ui-text" data-site-page="about" hidden aria-labelledby="about-title">
+    <section class="about-scene">
+      <!-- Replace the X with the future About background image. -->
+      <div class="image-placeholder about-backdrop" role="img" aria-label="About background image placeholder">
+        <svg viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L1 1M1 0L0 1"/></svg>
+      </div>
+      <div class="information-intro about-intro">
+        <h1 id="about-title">About</h1>
+        <div class="information-copy">
+          <p>Plopdrobe is a lifestyle brand shaped by the everyday habit of putting things down. A coat draped over a chair, a bag beside the bed, belongings kept within reach—these familiar scenes are the starting point of our design. We create objects that give these gestures a place. Angled lines and open curves invite you to drape, hang and place your things with ease. As clothes and belongings are added, their folds, textures and overlapping shapes become part of the object, creating a composition that changes through daily use. Named after the brief sound of something landing, Plopdrobe finds its rhythm in these small, repeated actions. Sculptural when empty and personal when in use, each object holds a scene of everyday life.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main id="cart-view" class="site-page ui-text" data-site-page="cart" hidden aria-labelledby="cart-title">
+    <div class="cart-content">
+      <h1 id="cart-title" class="sr-only">Cart</h1>
+      <p id="cart-empty" tabindex="-1">Your Cart is empty</p>
+      <div id="cart-items" hidden>
+        <article class="cart-item" aria-label="Plop coat stand in your cart">
+          <a class="cart-item-image" href="#product/plop-01"><img src="assets/group-26.png" alt="Plop coat stand" width="418" height="555"></a>
+          <div class="cart-item-copy">
+            <h2><a href="#product/plop-01" id="cart-product-name">PLOP 01 — COAT STAND</a></h2>
+            <p>NATURAL / SILVER</p>
+            <p>ONE SIZE</p>
+            <p id="cart-unit-price">₩320,000</p>
+            <div class="cart-quantity">
+              <button type="button" id="cart-decrease" aria-label="Decrease quantity">−</button>
+              <label class="sr-only" for="cart-quantity">Quantity</label>
+              <input id="cart-quantity" type="number" inputmode="numeric" min="1" max="99" step="1" value="1">
+              <button type="button" id="cart-increase" aria-label="Increase quantity">+</button>
+            </div>
+            <button type="button" id="cart-remove">Remove</button>
+          </div>
+          <p id="cart-line-total" class="cart-line-total">₩320,000</p>
+        </article>
+        <p class="cart-availability">Ordering will open soon.</p>
+      </div>
+      <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+    <div class="cart-total">
+      <p>Subtotal: <span id="cart-subtotal">₩0</span></p>
+      <button type="button" disabled title="Ordering will open soon.">Checkout</button>
+    </div>
+  </main>
+  <footer id="site-footer" class="site-footer ui-text" hidden>
+    <div class="footer-brand">
+      <a class="footer-wordmark" href="#" data-home aria-label="Plopdrobe home"><img src="assets/plopdrobe-logo.png" alt="Plopdrobe"></a>
+      <p>A Place for Things to Land.</p>
+    </div>
+    <nav aria-label="Footer information"><a href="#instructions">Instructions</a><a href="#about">About</a></nav>
+    <nav aria-label="Footer shop"><a href="#shop/all">Shop</a><a href="#simulation">Simulation</a></nav>
+    <nav aria-label="Footer cart"><a href="#cart">Cart</a></nav>
+  </footer>
+  <dialog id="info-panel" aria-labelledby="panel-title">
+    <button type="button" class="panel-close" aria-label="Close">×</button>
+    <h2 id="panel-title"></h2>
+    <p id="panel-body"></p>
+  </dialog>
+  <span id="status" class="sr-only" role="status" aria-live="polite"></span>
+</body>
+</html>
