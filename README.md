@@ -30,7 +30,7 @@ Node.js 18 이상 권장. 3D용 Three.js는 로컬 `vendor/`에서 불러옵니�
 
 클릭/터치/Enter/Space로 원을 만들 때 Web Audio로 합성한 짧은 피아노 느낌의 음이 재생됩니다. 실제 피아노 녹음이 아닙니다. C 메이저 펜타토닉 음계에서 무작위 선택하며 같은 음이 연속되지 않습니다. Instructions의 SOUND ON/OFF로 끌 수 있고 설정을 기억합니다. 페이지 진입 시 자동 재생하지 않습니다.
 
-SHOP: SIMULATION 링크와 가구 카테고리 필터. `shop.js`의 PRODUCTS에서 제품 이름·가격·이미지·카테고리를 수정할 수 있습니다. 현재 PLOP 01 — COAT STAND / KRW 0은 임시값입니다. 제품 이미지는 Group 26.png 원본입니다. 상품 클릭 시 상세 화면이 열리고 장바구니에 담을 수 있지만 결제는 연결되지 않았습니다. #shop/all 주소와 뒤로 가기를 지원합니다.
+SHOP: SIMULATION 링크와 가구 카테고리 필터. `shop.js`의 PRODUCTS에서 제품 이름·가격·이미지·카테고리를 수정할 수 있습니다. 제품명은 PLOPSTAND이며 KRW 0은 임시 가격입니다. 제품 이미지는 Group 26.png 원본입니다. 상품 클릭 시 상세 화면이 열리고 장바구니에 담을 수 있지만 결제는 연결되지 않았습니다. #shop/all 주소와 뒤로 가기를 지원합니다.
 
 
 ## SIMULATION
