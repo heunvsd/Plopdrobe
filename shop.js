@@ -1,5 +1,5 @@
 // Temporary catalog data. Replace name and price here when finalized.
-const PRODUCTS = [{ id: 'plop-01', name: 'PLOPSTAND', price: 0, image: 'assets/group-26.png', category: 'coat-stands', collection: 'plop', alt: 'PLOPSTAND coat stand with crossed wooden poles, a circular metal rail, and a round base' }];
+const PRODUCTS = [{ id: 'plop-01', name: 'PLOPSTAND', price: 0, image: 'assets/image-71.png', category: 'coat-stands', collection: 'plop', alt: 'PLOPSTAND coat stand with crossed wooden poles, a circular metal rail, and a round base' }];
 const shopView = document.querySelector('#shop-view');
 const shopOpenButton = document.querySelector('[data-shop-open]');
 const productGrid = document.querySelector('#product-grid');
@@ -17,7 +17,7 @@ function renderProducts() {
   for (const product of products) {
     const card = document.createElement('button');
     card.className = 'product-card'; card.type = 'button';
-    const img = document.createElement('img'); img.src = product.image; img.alt = product.alt; img.width = 418; img.height = 555;
+    const img = document.createElement('img'); img.src = product.image; img.alt = product.alt; img.width = 1672; img.height = 2219;
     const name = document.createElement('h3'); name.textContent = product.name;
     const price = document.createElement('p'); price.textContent = priceLabel(product.price);
     card.append(img, name, price);
